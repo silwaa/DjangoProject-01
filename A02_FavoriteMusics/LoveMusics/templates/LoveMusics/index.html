@@ -1,0 +1,43 @@
+{% load static %}
+
+
+<!DOCTYPE html><!--此文件放在app/templates/app文件夹下，起到独立命名空间的作用，防止出现引用错误-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoveMusics | 首页</title>
+    <link rel="stylesheet" href="{% static 'LoveMusics/style.css' %}"><!--生成静态文件的绝对url路径-->
+</head>
+<body>
+<!--对空行和空格进行控制-->
+<pre>
+    <p style="font-family:'阿里巴巴普惠体 M';font-size:13pt"> > {{ status }} <  <small style="color: darkgray">*登录可管理你的音乐信息</small></p>
+    <h1 style="background-color:orange;font-family:'LeeFont蒙黑体';font-weight: bold;color:white;font-size:33pt"> LoveMusics  |  首页</h1><!--标题h1-h6-->
+</pre>
+{% if new_songs %}
+    <pre><p style="font-family: '阿里巴巴普惠体 B';font-size:13pt">    最近添加的新音乐👇</p></pre>
+    <ul><!--无序列表-->
+    {% for music in new_songs %}
+        <li><a href="{% url 'LoveMusics:detail' music.scoreid %}">{{ music.pubdate }}：{{ music.song }} - {{ music.singer }}</a></li>
+        <!--属于LoveMusics应用下、命名为detail的url-->
+        <!--以上代码等同：<a href="/LoveMusics/双花 music.id 双花/"></a>，避免硬编码，
+            注意：HTML代码中双引号和单引号之间的配合使用，千万不要混乱搭配。-->
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>没有新增音乐。</p>
+{% endif %}
+<!--
+<hr>标签在 HTML 页面中创建水平线，可用于分隔内容
+<br>换行
+<ol>有序列表
+    <li>定义列表</li>
+</ol>
+<a href='https://...'>a标签链接</a>
+-->
+<br><br><br><hr><br><pre>
+    <button><a href="{% url 'LoveMusics:visual' %}" style="font-size:13pt;color:black;text-decoration:None">乐库</a></button>  查看更多音乐
+    <br><br><br><br><p style="font-family:'阿里巴巴普惠体 R';color:white;color:white;position:absolute;bottom:5%;left:40%">© LiSihua All Rights Reserved</p></pre>
+    <br><br>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoveMusics | 详情页</title>
+    <link rel="stylesheet" href="{% static 'LoveMusics/style.css' %}">
+</head>
+<body>
+<pre><p style="background-color:orange;font-family:'阿里巴巴普惠体 L';font-weight:bold;color:white">
+    ⇲ 音乐详细信息<small style="font-size:10pt;color:black">              发布于{{ pubdate }}
+</small>
+</p>
+    <h1 style="font-family:得意黑;">    《{{ info.song }}》<em style="font-family:'Bodoni Bd BT';font-size:23pt;color:orange">      {{ info.score }} </em><a href="{% url 'LoveMusics:result' info.id %}" style="font-family:'阿里巴巴普惠体 L';font-size:10pt;color:darkgray">({{ level_sum }}人已评)</a></h1>
+<ul><li style="font-family:'阿里巴巴普惠体 R';font-size:10pt;">歌手：{{ info.singer }}</li>
+    <li style="font-family:'阿里巴巴普惠体 R';font-size:10pt">语言：{{ info.lang }}</li>
+    <li style="font-family:'阿里巴巴普惠体 R';font-size:10pt">风格：{{ info.song_type }}</li>{% if info.prize %}
+    <li style="font-family:'阿里巴巴普惠体 R';font-size:10pt">获奖：{{ info.prize }}</li>
+{% endif %}
+</ul>
+<!--由于我们发送了一个POST请求，就必须考虑一个跨站请求伪造的安全问题，简称CSRF，通常缩写为 CSRF 或者 XSRF，
+    是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法；
+    在form表单内任意位置，添加一条 单花% csrf_token %单花 标签，避免这个困扰。
+action：表单数据将被发送到目的url
+method：数据的提交方式，一般分post和get
+<fieldset> 将表单元素分组并绘制边框 </fieldset>
+<legend> 框上的标题 </legend>
+<strong> 加粗文本 </strong>，<em> 强调文本 </em>
+双花 forloop.counter 双花是Django模板系统提供的一个变量，用来表示当前循环的次数，一般用来给循环项目添加有序数标，从1开始计数
+在form/input中：type="radio"，定义单选按钮(submit定义提交按钮)；
+               id，对应label的for，唯一区分控件的属性值，与name类似，但id是唯一的；
+               value，初始默认值；如果没有指定 value，默认为字符串 on；
+               <label for="对应id"> 某选项 </label>，多选一的圆形可点击选项；
+1、单选的功能取决于 radio 类型的 <input>，其中包含一组描述一系列相关选项的单选按钮；在给定单选组中，只可以选择一个选项；单选按钮通常渲染为小圆圈，当选中该选项时，圆圈被填充或高亮。
+2、多选时，name属性需设置为不同的值。
+-->
+</pre>
+<form action="{% url 'LoveMusics:score' info.id %}" method="post" style="position: absolute; top:20%; right:10%"><!--注意：此处发送的id来自detail，url发送到视图score里面⭐-->
+{% csrf_token %}
+<fieldset>
+    <legend><h3>欢迎通过LoveMusics参与音乐《{{ info.song }}》的评分</h3></legend>
+    <!-- % if error_message %}<p><strong>  error_message }}</strong></p> % endif %}
+    如果method没有接收到用户输入的数据，就无法向score的url输送数据，会报错TemplateDoesNotExist-->
+    <p>您认为该音乐的声乐、器乐、曲风等有几分合您心意：</p>
+    {% for l in level_list %}
+        <input type="radio" name="pingfen" id="pf{{ forloop.counter }}" value="{{ l }}">
+        <label for="pf{{ forloop.counter }}">{{ l }}</label><br>
+    {% endfor %}
+</fieldset>
+<br>
+    <input type="submit" value="确认评分"><!--获取到pingfen对应的l-->
+</form><a href="{% url 'LoveMusics:index' %}" style="position:absolute;top:5.5%;right:2%;text-decoration:None"><button style="background-color:ghostwhite">首页</button></a>
+<br><br><br><br><br><br><br><br><br><br><br><p style="font-family:'阿里巴巴普惠体 R';color:white;position:absolute;bottom:5%;left:40%">© LiSihua All Rights Reserved</p><br><br>
+</body>
+</html>

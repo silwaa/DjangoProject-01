@@ -1,0 +1,9 @@
+/*样式文件*/
+li a {
+    color: orange;  /*a标签的链接默认为橙色*/
+}
+body {
+    background: white url("images/橙色背景.jpg") no-repeat;  /* no-repeat 图片不重复，背景剩余部分用orange填充*/
+    background-size: cover;  /* 100%，铺满 */
+    background-position: center bottom;
+}

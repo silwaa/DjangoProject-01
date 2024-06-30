@@ -1,0 +1,27 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoveMusics | 评分结果页</title>
+    <link rel="stylesheet" href="{% static 'LoveMusics/style.css' %}">
+</head>
+<body>
+<pre><p style="background-color:orange;font-family:'阿里巴巴普惠体 L';font-weight:bold;color:white">
+    ⇲ 音乐评分结果
+    </p>
+    <a href="{% url 'LoveMusics:detail' info.id %}" style="font-family:得意黑;color:black;font-weight:normal;font-size:30pt;position:absolute;left:23%;top:22%;text-decoration:None">《{{ info.song }}》- {{ info.singer }}</a>
+    <em style="font-family:'Bodoni Bd BT';font-size:28pt;color:orange;position:absolute;right:30%;top:22.5%">{{ info.score }}</em>
+    <sub style="font-family:'Bodoni Bd BT';font-size:13pt;color:darkgray;position:absolute;right:26%;top:25.5%"> / 10.0</sub><!--下标(sup上标)-->
+    <h4 style="font-family:'阿里巴巴普惠体 R';color:black;position:absolute;left:23%;top:31.5%">该音乐在各平台评分情况如下：</h4></pre>
+<ol style="position:absolute;left:21.5%;top:37%">
+    {% for i in score %}
+        <pre><li style="font-family: '阿里巴巴普惠体 R'">{{ i.level }} —— from {{ i.platform }}</li></pre>
+    {% endfor %}
+</ol><a href="{% url 'LoveMusics:index' %}" style="position:absolute;top:5.5%;right:2%;text-decoration:None"><button style="background-color:ghostwhite">首页</button></a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p style="font-family:'阿里巴巴普惠体 R';color:white;position:absolute;bottom:5%;left:40%">© LiSihua All Rights Reserved</p><br><br>
+</body>
+</html>

@@ -1,0 +1,264 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoveMusics | 乐库</title>
+    <link rel="stylesheet" href="{% static 'LoveMusics/style.css' %}">
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script><!--加-->
+</head>
+<body><!--从以下生成的html语句复制过来的，最好是在检查元素的源代码中复制，实际上是JavaScript写的图表
+pyecharts.charts的Bar().add_xaxis().add_yaxis().set_globel_opts().render_embed()-->
+<pre><p style="background-color:orange;font-family:'阿里巴巴普惠体 L';font-weight:bold;color:white">
+    ⇲ 全部音乐
+    </p></pre>
+
+<br>
+<div id="910380902f5b49168bb98d47d9c01ec0" class="chart-container" style="width:1200px; height:500px; text-align:center; margin: auto"></div>
+    <script>
+        var chart_910380902f5b49168bb98d47d9c01ec0 = echarts.init(
+            document.getElementById('910380902f5b49168bb98d47d9c01ec0'), 'white', {renderer: 'canvas'});
+        var option_910380902f5b49168bb98d47d9c01ec0 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "color": [
+        "orange",
+        "darkgray",
+        "#5470c6",
+        "#91cc75",
+        "#fac858",
+        "#ee6666",
+        "#73c0de",
+        "#3ba272",
+        "#fc8452",
+        "#9a60b4",
+        "#ea7ccc"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u8bc4\u5206",
+            "legendHoverLink": true,
+            "data": [
+                7.0,
+                4.7,
+                8.0,
+                7.3,
+                7.3,
+                6.5,
+                8.0,
+                7.0,
+                6.2
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "itemStyle": {
+                "opacity": 0.68
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u5728\u542c\u4eba\u6570",
+            "legendHoverLink": true,
+            "data": [
+                4,
+                3,
+                1,
+                3,
+                3,
+                4,
+                3,
+                2,
+                8
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "itemStyle": {
+                "opacity": 0.68
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u8bc4\u5206",
+                "\u5728\u542c\u4eba\u6570"
+            ],
+            "selected": {},
+            "show": true,
+            "bottom": "bottom",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "rotate": 30,
+                "margin": 8
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\uff087\uff09\u90a3\u4e9b\u82b1\u513f",
+                "\uff081\uff09\u7a3b\u9999",
+                "\uff089\uff09Story Of Our Life",
+                "\uff086\uff09\u67f3\u53f6\u7b3a",
+                "\uff082\uff09\u73ab\u7470\u5c11\u5e74",
+                "\uff085\uff09Lover",
+                "\uff088\uff09\u60c5\u4e3a\u4f55\u7269",
+                "\uff083\uff09Tokyo",
+                "\uff084\uff09\u6d6e\u5149"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "LoveMusics\u4e50\u5e93",
+            "target": "blank",
+            "subtext": "                   *\u6309\u65f6\u95f4\u6392\u5e8f                  ",
+            "subtarget": "blank",
+            "left": "center",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false,
+            "textStyle": {
+                "color": "orange",
+                "fontSize": 28
+            }
+        }
+    ]
+};
+        chart_910380902f5b49168bb98d47d9c01ec0.setOption(option_910380902f5b49168bb98d47d9c01ec0);
+    </script>
+
+<br><br><br><br>
+<a href="{% url 'LoveMusics:index' %}" style="position:absolute;top:5.5%;right:2%;text-decoration:None"><button style="background-color:ghostwhite">首页</button></a>
+<p style="font-family:'阿里巴巴普惠体 R';color:white;position:absolute;bottom:5%;left:40%">© LiSihua All Rights Reserved</p><br><br>
+</body>
+</html>
